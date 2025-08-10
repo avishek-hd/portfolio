@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avishek Das — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0f1115; --card:#0e1621; --accent:#ff7a18; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:16px;
+      --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background: radial-gradient(1200px 600px at 10% 10%, rgba(255,122,24,0.06), transparent), radial-gradient(900px 500px at 90% 90%, rgba(0,120,255,0.03), transparent), var(--bg); color:#e6eef6}
+    a{color:var(--accent); text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:48px auto;padding:32px;display:grid;grid-template-columns:320px 1fr;gap:28px}
+
+    /* SIDEBAR */
+    .sidebar{background:linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass-2));border-radius:var(--radius);padding:22px;backdrop-filter:blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6);position:relative}
+    .avatar{width:100%;height:260px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#0b1220,#17202a);display:flex;align-items:center;justify-content:center}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{margin:18px 0 6px;font-size:1.6rem}
+    p.role{margin:0;color:var(--muted)}
+    .meta{margin-top:14px;font-size:0.95rem;color:var(--muted)}
+    .links{display:flex;gap:8px;margin-top:14px}
+    .btn{padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.04);cursor:pointer;color:var(--muted);font-weight:600}
+    .btn.accent{background:linear-gradient(90deg,var(--accent),#ffb88c);color:#07101a;box-shadow:0 6px 18px rgba(255,122,24,0.12)}
+
+    /* MAIN */
+    .main{display:flex;flex-direction:column;gap:18px}
+    .hero{padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow: inset 0 1px 0 rgba(255,255,255,0.02)}
+    .hero header{display:flex;justify-content:space-between;align-items:center}
+    .summary{margin-top:12px;color:var(--muted);line-height:1.6}
+
+    /* sections */
+    section.card{padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);box-shadow:0 6px 18px rgba(2,6,23,0.5)}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .list li{margin:8px 0}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));cursor:pointer;transition:transform .25s ease, box-shadow .25s ease}
+    .project:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(2,6,23,0.6)}
+    .project h4{margin:6px 0}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* publications */
+    .pubs a{display:block;margin:8px 0}
+
+    /* contact */
+    .contact-row{display:flex;gap:12px;align-items:center}
+    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* small screens */
+    @media (max-width:880px){.wrap{grid-template-columns:1fr;padding:18px}.avatar{height:180px}}
+
+    /* animated background dots */
+    .bg-dots{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .dot{position:absolute;width:14px;height:14px;border-radius:50%;opacity:.06;filter:blur(6px)}
+  </style>
+</head
+<body>
+  <div class="bg-dots" aria-hidden>
+    <div class="dot" style="left:5%;top:18%;background:linear-gradient(90deg,#ff7a18,#ffb88c);width:22px;height:22px;opacity:.08"></div>
+    <div class="dot" style="left:80%;top:10%;background:linear-gradient(90deg,#2ea3ff,#6dd3ff);width:36px;height:36px;opacity:.04"></div>
+    <div class="dot" style="left:65%;top:78%;background:linear-gradient(90deg,#7effc2,#4bffb8);width:26px;height:26px;opacity:.03"></div>
+  </div>
+
+  <div class="wrap" role="main">
+    <aside class="sidebar">
+      <div class="avatar">
+        <!-- user can replace avatar.jpg in repo -->
+        <img src="avatar.jpg" alt="Avishek Das">
+      </div>
+      <h1>Avishek Das</h1>
+      <p class="role">Lecturer — Computer Science & Engineering, Northern University Bangladesh</p>
+
+
+
+
+      <div style="margin-top:18px">
+        <div class="muted">Contact</div>
+        <div style="margin-top:6px">📞 +88-01762862116</div>
+        <div style="margin-top:6px"> <a href="https://www.linkedin.com/in/avishek-das-219168215/">🔗 LinkedIn </a></div>
+
+        <div style="margin-top:6px">✉️ <span id="email">avishek.reds@gmail.com</span> <button class="btn" id="copy-email">Copy</button></div>
+      </div>
+
+      <div style="margin-top:18px">
+        <div class="muted">Languages & Tests</div>
+        <div style="margin-top:8px">IELTS 8 • TOEFL 103 • GRE 318</div>
+      </div>
+
+    </aside>
+
+    <main class="main">
+      <section class="hero card">
+        <header>
+          <div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="font-size:1.2rem;font-weight:700">Hi — I’m Avishek</div>
+              <div class="chip">Lecturer • Research Enthusiast</div>
+            </div>
+            <div class="muted" style="margin-top:8px">I enjoy teaching Discrete Mathematics, Data Structures, Operating Systems and work on machine learning specializing in the field of health informatics and computer vision. I’m available for collaboration on above mentioned research fields.</div>
+          </div>
+
+        </header>
+      </section>
+
+      <section id="experience" class="card">
+        <h3>Experience</h3>
+        <div class="grid-2" style="margin-top:12px">
+          <div>
+            <h4>Current</h4>
+            <div class="muted">Lecturer — Northern University Bangladesh (Oct 2024 - Present)</div>
+            <div class="muted">
+            <ul class="list">
+              <li>Courses: Operating Systems, Discrete Mathematics</li>
+              <li>Student mentoring and departmental duties</li>
+            </ul>
+          </div>
+          </div>
+          <div>
+            <h4>Previous</h4>
+            <div class="muted">
+                        <li>Graduate Teaching Assistant, The University of Texas at Arlington (Aug 2021- May 2023)</li>
+                        <li>Lecturer, Bangladesh University of Business and Technology (Dec 2019- March 2021)</li>
+                        <li>Lecturer, Uttara University (Feb 2019- Dec 2019)</li>
+                      
+        </div>
+      </section>
+      <section id="publications" class="card">
+        <h3>Publications</h3>
+        <div class="pubs" style="margin-top:12px">
+          <a href="https://www.liebertpub.com/doi/abs/10.1089/cmb.2022.0370" target="_blank">Comparison of ML algorithms & feature selection on KEGG database — Journal of Computational Biology, 2023</a>
+          <a href="https://ieeexplore.ieee.org/abstract/document/9331183" target="_blank">Illegal Trash Thrower Detection Based on HOGSVM — ICREST 2021 (IEEE)</a>
+        </div>
+      </section>
+
+      <section id="projects" class="card">
+        <h3>Selected Projects</h3>
+        <div class="projects" style="margin-top:12px">
+          <div class="project" data-url="#">
+            <strong>ICN Architecture Optimization</strong>
+            <div class="muted">Undergraduate thesis — proposed a field to reduce IoT network overhead.</div>
+          </div>
+          <div class="project" data-url="#">
+            <strong>CUET School & College Management</strong>
+            <div class="muted">A web-based academic platform for students and teachers.</div>
+          </div>
+          <div class="project" data-url="#">
+            <strong>Foot-in-Ball</strong>
+            <div class="muted">Soccer tracking site for live scores, news & transfers.</div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="education" class="card">
+        <h3>Education & Certifications</h3>
+        <div style="margin-top:12px">
+          <ul class="list">
+            <li>B.Sc. in CSE, Chittagong University of Engineering and Technology (2014–2018)</li>
+            <li>H.Sc. in Science, Major General Mahmudul Hasan College, Tangail, Dhaka (2013)</li>
+            <li>S.Sc. in Science, Bindubashini Govt Boys' High School,  Tangail, Dhaka (2011)</li>
+          </ul>
+        </div>
+      </section>
+      <section id="education" class="card">
+        <h3>Skills</h3>
+        <div style="margin-top:12px">
+         <ul class="skills-list">
+            <li><strong>Languages:</strong> Python, C++</li>
+            <li><strong>Machine Learning &amp; AI:</strong> PyTorch, Computer Vision, NLP, Deep Learning</li>
+            <li><strong>Data Science:</strong> Pandas, NumPy, scikit-learn, Data Visualization, Statistical Analysis</li>
+            <li><strong>Tools:</strong> Linux, LaTeX, Excel </li>
+        </ul>
+        </div>
+      </section>
+
+
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault(); const id = a.getAttribute('href');
+        if(id === '#') return; document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    });
+
+    // Copy email to clipboard
+    document.getElementById('copy-email').addEventListener('click',async ()=>{
+      const txt = document.getElementById('email').innerText;
+      try{ await navigator.clipboard.writeText(txt); alert('Email copied to clipboard'); }catch(e){ prompt('Copy email', txt); }
+    });
+
+    // Download CV button (expects cv_2025.pdf in same repo)
+    document.getElementById('download-cv').addEventListener('click',()=>{
+      window.open('cv_2025.pdf','_blank');
+    });
+
+    // Projects click -> open detail modal (simple)
+    document.querySelectorAll('.project').forEach(p=>{
+      p.addEventListener('click',()=>{
+        const title = p.querySelector('strong').innerText;
+        const desc = p.querySelector('.muted').innerText;
+        showModal(title,desc);
+      })
+    });
+
+    function showModal(title,desc){
+      const m = document.createElement('div');
+      m.style.position='fixed';m.style.inset=0;m.style.display='flex';m.style.alignItems='center';m.style.justifyContent='center';m.style.background='rgba(2,6,23,0.6)';m.style.zIndex=9999;
+      const card = document.createElement('div');card.style.width='min(760px,92%)';card.style.padding='20px';card.style.borderRadius='12px';card.style.background='linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))';
+      card.innerHTML = `<h3 style="margin-top:0">${title}</h3><p style="color:var(--muted)">${desc}</p><div style="margin-top:16px;text-align:right"><button id='close-modal' class='btn'>Close</button></div>`;
+      m.appendChild(card);document.body.appendChild(m);
+      document.getElementById('close-modal').onclick = ()=> m.remove();
+    }
+
+    // small animation for background dots
+    const dots = document.querySelectorAll('.bg-dots .dot');
+    dots.forEach((d,i)=>{
+      const s = 2+Math.random()*6; d.animate([{transform:'translateY(0px)'},{transform:`translateY(${(i%2?1:-1)*(10+Math.random()*30)}px)`},{transform:'translateY(0px)'}],{duration:8000+Math.random()*6000,iterations:Infinity,easing:'ease-in-out'});
+    });
+  </script>
+</body>
+</html>
